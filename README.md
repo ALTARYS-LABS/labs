@@ -25,3 +25,22 @@ cd labs/spring-application-events
 ```
 
 Chaque dossier de tutoriel contient son propre `README.md` avec les instructions de lancement et les objectifs pédagogiques.
+
+## Ajouter un nouveau tutoriel
+
+1. Développer le projet où vous le souhaitez sur votre machine
+2. Copier les sources (sans les artefacts de build) dans ce dépôt :
+   ```bash
+   rsync -a --exclude='build/' --exclude='.gradle/' --exclude='.idea/' \
+     /chemin/vers/mon-projet/ \
+     /Users/eblonvia/dev/workspace/labs/altarys/altaryslabs/nom-du-tutoriel/
+   ```
+3. Ajouter un `README.md` dans le nouveau dossier (objectifs, prérequis, instructions)
+4. Ajouter une ligne dans le tableau **Tutoriels** ci-dessus
+5. Committer et pousser :
+   ```bash
+   cd /Users/eblonvia/dev/workspace/labs/altarys/altaryslabs
+   git add .
+   git commit -m "feat: add nom-du-tutoriel tutorial"
+   git push
+   ```
